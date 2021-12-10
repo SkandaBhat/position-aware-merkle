@@ -1,10 +1,8 @@
 {
-  "name": "@paulrberg/solidity-template",
-  "description": "Template for writing Solidity smart contracts",
+  "name": "@razor-network/merkle-solidity",
   "version": "1.0.0",
   "author": {
-    "name": "Paul Razvan Berg",
-    "url": "https://paulrberg.com"
+    "name": "Razor Network"
   },
   "devDependencies": {
     "@codechecks/client": "^0.1.12",
@@ -68,7 +66,7 @@
     "access": "public"
   },
   "scripts": {
-    "clean": "shx rm -rf ./artifacts ./cache ./coverage ./src/types ./coverage.json",
+    "clean": "shx rm -rf ./artifacts ./cache ./coverage ./typechain-types ./coverage.json",
     "commit": "git-cz",
     "compile": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat compile",
     "coverage": "yarn typechain && hardhat coverage --solcoverjs ./.solcover.js --temp artifacts --testfiles \"./test/**/*.ts\"",
@@ -76,6 +74,7 @@
     "lint": "yarn lint:sol && yarn lint:ts && yarn prettier:check",
     "lint:sol": "solhint --config ./.solhint.json --max-warnings 0 \"contracts/**/*.sol\"",
     "lint:ts": "eslint --config ./.eslintrc.yaml --ignore-path ./.eslintignore --ext .js,.ts .",
+    "lint:fix": "prettier --write contracts",
     "postinstall": "husky install",
     "postpublish": "pinst --enable",
     "prepublishOnly": "pinst --disable",

@@ -2,12 +2,7 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
-
-import "./tasks/accounts";
-import "./tasks/deploy";
-
 import { resolve } from "path";
-
 import { config as dotenvConfig } from "dotenv";
 import { HardhatUserConfig } from "hardhat/config";
 import { NetworkUserConfig } from "hardhat/types";
@@ -90,7 +85,6 @@ const config: HardhatUserConfig = {
     },
   },
   typechain: {
-    outDir: "src/types",
     target: "ethers-v5",
   },
 };
