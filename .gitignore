@@ -27,3 +27,4 @@ yarn-error.log*
 # types
 **/typechain-types
 
+.DS_Store
